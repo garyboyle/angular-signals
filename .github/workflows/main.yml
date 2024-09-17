@@ -36,4 +36,3 @@ jobs:
         run: ls -R
       - name: Copy Artifact
         run: cp -r artifact my-new-artifact
-        working-directory: artifact
