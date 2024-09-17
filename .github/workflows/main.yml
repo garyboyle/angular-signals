@@ -36,3 +36,5 @@ jobs:
         run: ls -R
       - name: Copy Artifact
         run: cp -r artifact my-new-artifact
+      - name: Display structure of downloaded files
+        run: ls -R
