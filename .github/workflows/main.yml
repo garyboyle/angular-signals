@@ -28,7 +28,7 @@ jobs:
     needs: build
     steps:
       - name: Get Artifact
-        uses: action/download-artifact@v1
+        uses: actions/download-artifact@v1
         with:
           name: artifact
           path: dist
