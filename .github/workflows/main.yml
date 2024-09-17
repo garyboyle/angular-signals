@@ -5,7 +5,7 @@ on:
       - "main"
 
 env:
-  sha: ${{ github.event.head_commit.id}}
+  sha: ${{ github.sha}}
 
 jobs:
   build:
@@ -38,6 +38,6 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -R
       - name: Copy Artifact
-        run: cp -r artifact my-new-artifact
+        run: cp -r artifact${{ env.sha }} my-new-artifact
       - name: Display structure of downloaded files
         run: ls -R
