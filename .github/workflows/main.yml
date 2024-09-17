@@ -4,6 +4,9 @@ on:
     branches:
       - "main"
 
+env:
+  sha: ${{ github.event.head_commit.id}}
+
 jobs:
   build:
     runs-on: ubuntu-latest
