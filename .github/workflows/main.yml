@@ -1,8 +1,8 @@
 name: Angular Signals Deploy
-on: 
+on:
   push:
     branches:
-      - 'main'
+      - "main"
 
 jobs:
   build:
@@ -19,8 +19,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Upload
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: artifact
           path: dist
-      

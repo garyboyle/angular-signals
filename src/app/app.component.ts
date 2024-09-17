@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, computed, signal } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +10,15 @@ export class AppComponent implements OnInit {
 
   count = signal(0);
 
+  todos = signal({ name: 'Gary Boyle', email: 'asdasdfasdfasd' });
+
+  multipleCount = computed(() => this.count() * 9);
+
   increment() {
     this.count.set(5);
   }
 
   ngOnInit(): void {
-    this.increment();
+    this.todos.mutate((value) => (value.email = 'beans'));
   }
 }
