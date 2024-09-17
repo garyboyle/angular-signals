@@ -1,0 +1,26 @@
+name: Angular Signals Deploy
+on: 
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          version: 18.x
+      - name: Install
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Upload
+        uses: actions/upload-artifact@v1
+        with:
+          name: artifact
+          path: dist
+      
